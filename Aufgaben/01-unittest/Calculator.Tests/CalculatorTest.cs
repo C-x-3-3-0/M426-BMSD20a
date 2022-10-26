@@ -36,5 +36,50 @@ namespace Calculator.Tests
             // Then
             Assert.Equal(expected, actual);
         }
+
+        [Fact]
+        public void Multiplikation()
+        {
+            //Arrange
+            int p1 = 5;
+            int p2 = 4;
+            int expect = 20;
+            Calculator calculator = new Calculator();
+
+            //Act
+            int Resultat = calculator.Multiply(p1, p2);
+
+            //assert
+            Assert.Equal(expect, Resultat);
+        }
+
+
+        [Fact]
+        public void Division()
+        {
+            //Arrange
+            int p1 = 20;
+            int p2 = 4;
+            int expect = 5;
+            Calculator calculator = new Calculator();
+
+            //Act
+            int Resultat = calculator.Division(p1, p2);
+
+            //assert
+            Assert.Equal(expect, Resultat);
+        }
+
+        [Fact]
+        public void DividedByZeroException()
+        {
+            //Arrange
+            int p1 = 20;
+            int p2 = 0;
+            Calculator calculator = new Calculator();
+
+            //assert
+            Assert.Throws<DivideByZeroException>(() => calculator.Division(p1, p2));
+        }
     }
 }
