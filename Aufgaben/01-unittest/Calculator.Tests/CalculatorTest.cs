@@ -81,5 +81,20 @@ namespace Calculator.Tests
             //assert
             Assert.Throws<DivideByZeroException>(() => calculator.Division(p1, p2));
         }
+
+        [Fact]
+        public void ArgumentException()
+        {
+            //Arrange
+            int p1 = 20;
+            int p2 = 0;
+            Calculator calculator = new Calculator();
+
+            //assert
+            Assert.Throws<ArgumentException>(() => calculator.Division(p1, p2));
+
+
+
+        }
     }
 }

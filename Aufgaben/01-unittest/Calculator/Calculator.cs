@@ -21,6 +21,7 @@ namespace Calculator
 
         public int Division(int dividend, int divisor)
         {
+            if (divisor== 0) throw new ArgumentException();
             return dividend / divisor;
         }
     }
