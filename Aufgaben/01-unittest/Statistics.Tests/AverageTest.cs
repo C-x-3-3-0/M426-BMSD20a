@@ -33,10 +33,37 @@ namespace Statistics.Tests
         [Fact]
         public void TestMeanOfNoNumbers()
         {
-            List<int> numbers = new List<int> {  };
+            List<int> numbers = new List<int> { };
             Average average = new Average();
 
             Assert.Throws<ArgumentException>(() => average.Mean(numbers));
+
+        }
+
+        [Fact]
+        public void TestMedianForOddNumberOfElements()
+        {
+            List<int> numbers = new List<int> {/*1,*/1, 2, 3, 4, 5, 6, 7/*,200*/}; //Es geht immer noch
+            double expected = 4;
+            Average average = new Average();
+            double actual = average.Median(numbers);
+
+
+
+            Assert.Equal(expected, actual);
+        }
+        [Fact]
+        public void TestMedianForEvenNumberOfElements()
+        {
+            List<int> numbers = new List<int> { /*1*/400, 6, 5, 2, 8, 11, 10, 2,/*, 10000*/ }; //Es geht immer noch
+            double expected = 7;
+            Average average = new Average();
+            double actual = average.Median(numbers);
+
+
+
+            Assert.Equal(expected, actual);
+
 
         }
     }
