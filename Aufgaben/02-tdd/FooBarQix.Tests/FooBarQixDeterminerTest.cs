@@ -52,3 +52,52 @@ namespace FooBarQix.Tests
 
             Assert.Equal("Qix", result);
         }
+        [Fact]
+        public void Determine_ReturnsFooBar()
+        {
+            int number = 15;
+
+            var testee = new FooBarQixDeterminer();
+
+            var result = testee.Determine(number);
+
+            Assert.Equal("FooBar", result);
+        }
+
+        [Fact]
+        public void Determine_ReturnsFooQix()
+        {
+            int number = 21;
+
+            var testee = new FooBarQixDeterminer();
+
+            var result = testee.Determine(number);
+
+            Assert.Equal("FooQix", result);
+        }
+
+        [Fact]
+        public void Determine_ReturnsFooBarQix()
+        {
+            int number = 105;
+
+            var testee = new FooBarQixDeterminer();
+
+            var result = testee.Determine(number);
+
+            Assert.Equal("FooBarQix", result);
+        }
+
+        [Fact]
+        public void Determine_ReturnsBarQix()
+        {
+            int number = 35;
+
+            var testee = new FooBarQixDeterminer();
+
+            var result = testee.Determine(number);
+
+            Assert.Equal("BarQix", result);
+        }
+    }
+}
